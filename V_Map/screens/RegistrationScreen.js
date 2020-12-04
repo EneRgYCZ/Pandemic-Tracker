@@ -75,7 +75,7 @@ export default class App extends React.Component {
                 <StatusBar barStyle="light-content" />
                 <View style={styles.header}>
                     <ImageBackground
-                        source={require("/Users/user/Desktop/Apps/V_Map/assets/header.png")}
+                        source={require("/Users/user/Desktop/Apps/Pandemic-Tracker/Pandemic-Tracker/V_Map/assets/header.png")}
                         style={styles.imageBackground}>
                         <Text style={{
                             color: 'white',

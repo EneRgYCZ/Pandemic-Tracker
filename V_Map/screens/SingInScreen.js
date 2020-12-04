@@ -2,212 +2,126 @@ import React from "react";
 import {
     View,
     Text,
-    StyleSheet,
-    ImageBackground,
-    StatusBar,
+    StyleSheet, 
     TextInput,
-    Animated,
-    Dimensions,
-    TouchableOpacity,
-    Button
-} from "react-native";
+    L
+} from "react-native" 
 
-import { TypingAnimation } from 'react-native-typing-animation';
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as Animatable from 'react-native-animatable';
+import FontAwsome from "react-native-vector-icons/FontAwesome";
+import LinearGradient from "react-native-linear-gradient"
+import Feather from "react-native-vector-icons/Feather";
+import { color } from "react-native-reanimated";
 
-import RegistrationScreen from "./RegistrationScreen";
-import RootStack from "./RootStack";
-
-export default class SigninScreen extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            typing_email: false,
-            typing_password: false,
-            animation_login: new Animated.Value(width - 40),
-            enable: true
-        }
-    }
-
-    _foucus(value) {
-        if (value == "email") {
-            this.setState({
-                typing_email: true,
-                typing_password: false
-            })
-        }
-        else {
-            this.setState({
-                typing_email: false,
-                typing_password: true
-            })
-        }
-    }
-
-    _typing() {
-        return (
-            <TypingAnimation
-                dotColor="#93278f"
-                style={{ marginRight: 25 }}
-            />
-        )
-    }
-
-    _animation() {
-        Animated.timing(
-            this.state.animation_login,
-            {
-                toValue: 40,
-                duration: 250
-            }
-        ).start();
-
-        setTimeout(() => {
-            this.setState({
-                enable: false,
-                typing_email: false,
-                typing_password: false
-            })
-        }, 150);
-    }
-
+export default class SinginComponent extends React.Component {
     render() {
-        console.log(this.props.navigation);
-        const width = this.state.animation_login;
         return (
-            <View style={styles.container}>
-                <StatusBar barStyle="light-content" />
-                <View style={styles.header}>
-                    <ImageBackground
-                        source={require("/Users/user/Desktop/Apps/V_Map/assets/header.png")}
-                        style={styles.imageBackground}>
-                        <Text style={{
-                            color: 'white',
-                            fontWeight: 'bold',
-                            fontSize: 30
-                        }}>
-                            Wellcome
-                        </Text>
-                        <Text style={{
-                            color: 'yellow'
-                        }}>Sign in to continute</Text>
-                    </ImageBackground>
+            <View style = {styles.container}>
+                <View style = {styles.header}>
+                    <Text style={styles.text_header}>Welcome</Text>
                 </View>
                 <View style={styles.footer}>
-                    <Text style={[styles.title, {
-                        marginTop: 50
-                    }]}>E-mail</Text>
-                    <View style={styles.action}>
-                        <TextInput
-                            placeholder="Your email.."
-                            style={styles.textInput}
-                            onFocus={() => this._foucus("email")}
+                    <Text style={styles.text_footer}>E-Mail</Text>
+                    <View style = {styles.action}>
+                        <FontAwsome
+                            name = "user-o"
+                            color = "#05375a"
+                            size = {20}
                         />
-                        {this.state.typing_email ?
-                            this._typing()
-                            : null}
+                        <TextInput
+                            placeholder = "Your Email..."
+                            style = {styles.text_input}
+                        />
+                        <Feather
+                            name = "check-circle"
+                            color = "green"
+                            size = {20}
+                        />
                     </View>
-                    <Text style={[styles.title, {
-                        marginTop: 20
+
+                    <Text style={[styles.text_footer,{
+                        marginTop : 35
                     }]}>Password</Text>
                     <View style={styles.action}>
-                        <TextInput
-                            secureTextEntry
-                            placeholder="Your password.."
-                            style={styles.textInput}
-                            onFocus={() => this._foucus("password")}
+                        <FontAwsome
+                            name="lock"
+                            color="#05375a"
+                            size={20}
                         />
-                        {this.state.typing_password ?
-                            this._typing()
-                            : null}
+                        <TextInput
+                            placeholder="Your Password..."
+                            style={styles.text_input}
+                        />
+                        <Feather
+                            name="eye-off"
+                            color="gray"
+                            size={20}
+                        />
                     </View>
-                    <TouchableOpacity>
-                        <View style={styles.button_container}>
-                            <Animated.View style={[styles.animation, {
-                                width
-                            }]}>
-                                {this.state.enable ?
-                                    <Text style={styles.textLogin}>Login</Text>
-                                    :
-                                    <Animatable.View
-                                        animation="bounceIn"
-                                        delay={50}>
-                                        <FontAwesome
-                                            name="check"
-                                            color="white"
-                                            size={20}
-                                        />
-                                    </Animatable.View>
-                                }
-                            </Animated.View >
-                        </View>
-                    </TouchableOpacity>
+                    <Text style = {{color : "#009bd1", marginTop : 15 }}>ForgotPassword</Text>
+                    <View style = {styles.button}>
+                        <LinearGradient
+                            colors = {["#5db8fe", "#39cff2"]}
+                            style = {styles.singIn}>
+                            <Text>Sign In</Text>
+                        </LinearGradient>
+                    </View>
                 </View>
             </View>
         )
     }
 }
 
-const width = Dimensions.get("screen").width;
-
-var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'white',
-        justifyContent: 'center'
+const styles = StyleSheet.create({
+    container : {
+        flex : 1,
+        backgroundColor : "#05375a"
     },
-    header: {
-        flex: 1,
+    header : {
+        flex : 1,
+        justifyContent : "center",
+        paddingHorizontal : 20,
+        paddingBottom : 50
     },
-    footer: {
-        flex: 2,
-        padding: 20
+    footer : {
+        flex : 2,
+        backgroundColor : "white",
+        borderTopEndRadius : 30,
+        borderTopRightRadius : 30,
+        borderTopLeftRadius: 30,
+        paddingHorizontal : 20,
+        paddingBottom : 30
     },
-    imageBackground: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: "100%",
-        height: '100%'
+    text_header : {
+        color : "white",
+        fontWeight : "bold",
+        fontSize : 30,
     },
-    title: {
-        color: 'black',
-        fontWeight: 'bold'
+    text_footer : {
+        paddingTop : 20,
+        color: "#05375a",
+        fontSize : 18
+    }, 
+    action : {
+        flexDirection : "row",
+        marginTop : 10,
+        borderBottomWidth : 1,
+        borderBottomColor : "#f2f2f2",
+        paddingBottom : 5
     },
-    action: {
-        flexDirection: 'row',
-        borderBottomWidth: 1,
-        borderBottomColor: '#f2f2f2'
+    text_input : {
+        flex : 1,
+        paddingLeft : 10,
+        color: "#05375a"
     },
-    textInput: {
-        flex: 1,
-        marginTop: 5,
-        paddingBottom: 5,
-        color: 'gray'
+    button : {
+        alignItems : "center",
+        marginTop : 50
     },
-    button_container: {
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    animation: {
-        backgroundColor: '#93278f',
-        paddingVertical: 10,
-        marginTop: 30,
-        borderRadius: 100,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    textLogin: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 18
-    },
-    signUp: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginTop: 20
+    singIn : {
+        width : "100%",
+        height : "50%",
+        justifyContent : "center",
+         alignItems : "center",
+         borderRadius : 10
     }
-});
+})
