@@ -4,6 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/V_Map.iml" filepath="$PROJECT_DIR$/.idea/modules/V_Map.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/V_Map.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/V_Map.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1236457744/V_Map.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-1236457744/V_Map.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1579306412/V_Map.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/1579306412/V_Map.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/21381291/V_Map.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/21381291/V_Map.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/641332413/V_Map.react-native-linear-gradient.iml" filepath="$PROJECT_DIR$/.idea/modules/641332413/V_Map.react-native-linear-gradient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1901944465/V_Map.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/1901944465/V_Map.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-276047276/V_Map.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-276047276/V_Map.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/353391468/V_Map.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/353391468/V_Map.react-native-screens.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1334780757/V_Map.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-1334780757/V_Map.react-native-vector-icons.iml" />
     </modules>
   </component>

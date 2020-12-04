@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/user/Desktop/Apps/V_Map/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/user/Desktop/Apps/Pandemic-Tracker/Pandemic-Tracker/V_Map/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/user/.gradle/caches/transforms-2/files-2.1/e3a2e867d331253c3dea79a8410594da/fragment-1.2.1/res/values/values.xml",
@@ -20,23 +20,6 @@
                         "endLines": "573,615,5872,5876",
                         "endColumns": "56,63,24,24",
                         "endOffsets": "37231,39297,377099,377248"
-                    }
-                },
-                {
-                    "source": "/Users/user/Desktop/Apps/V_Map/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "42",
-                        "endOffsets": "54"
-                    },
-                    "to": {
-                        "startLines": "671",
-                        "startColumns": "4",
-                        "startOffsets": "43007",
-                        "endColumns": "42",
-                        "endOffsets": "43045"
                     }
                 },
                 {
@@ -94,25 +77,6 @@
                         "endLines": "6015,6720",
                         "endColumns": "22,22",
                         "endOffsets": "383273,418499"
-                    }
-                },
-                {
-                    "source": "/Users/user/Desktop/Apps/V_Map/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "231"
-                    },
-                    "to": {
-                        "startLines": "800",
-                        "startColumns": "4",
-                        "startOffsets": "58386",
-                        "endLines": "803",
-                        "endColumns": "12",
-                        "endOffsets": "58563"
                     }
                 },
                 {
@@ -188,20 +152,22 @@
                     }
                 },
                 {
-                    "source": "/Users/user/Desktop/Apps/V_Map/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
+                    "source": "/Users/user/Desktop/Apps/Pandemic-Tracker/Pandemic-Tracker/V_Map/android/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "6,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "156,262",
-                        "endColumns": "63,68",
-                        "endOffsets": "215,326"
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "54",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "231"
                     },
                     "to": {
-                        "startLines": "635,636",
-                        "startColumns": "4,4",
-                        "startOffsets": "40488,40552",
-                        "endColumns": "63,68",
-                        "endOffsets": "40547,40616"
+                        "startLines": "800",
+                        "startColumns": "4",
+                        "startOffsets": "58386",
+                        "endLines": "803",
+                        "endColumns": "12",
+                        "endOffsets": "58563"
                     }
                 },
                 {
@@ -221,6 +187,40 @@
                         "endLines": "111,112,529,562,563,564,565,566,586,613,614,670,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,708,713,716,717,718,719,720,721,761,762,763,764,765,767,768,769,770,771,772,773,775,776,777,778,787,791,2633,2636,2647,2650,2654,2658,2991,2994,2997,3000,3236,3266,3275,3282,3311,3314,3317,3417,3423,4363",
                         "endColumns": "62,62,50,47,48,47,48,48,42,53,47,72,74,122,95,88,107,116,119,119,109,171,102,106,102,110,168,167,116,103,112,107,112,90,110,168,97,126,124,94,106,79,75,72,86,70,70,77,79,85,83,71,81,80,83,76,86,84,78,74,72,76,77,72,77,10,10,12,12,12,12,10,10,12,12,12,12,25,34,10,10,10,10,10,12,12,10",
                         "endOffsets": "6825,6888,34690,36648,36697,36745,36794,36843,37846,39185,39233,43002,43401,43524,43620,43709,43817,43934,44054,44174,44284,44456,44559,44666,44769,44880,45049,45217,45334,45438,45551,45659,45772,45863,45974,46143,46241,46368,46493,46588,46695,47202,47746,48126,48213,48284,48355,48433,48513,55572,55656,55728,55810,55891,56028,56105,56192,56277,56356,56431,56504,56652,56730,56803,56881,57571,57819,177565,177756,178269,178452,178654,178860,201567,201756,201955,202142,218820,221011,221549,221967,223487,223664,223843,232088,232453,293451"
+                    }
+                },
+                {
+                    "source": "/Users/user/Desktop/Apps/Pandemic-Tracker/Pandemic-Tracker/V_Map/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
+                    "from": {
+                        "startLines": "6,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "156,262",
+                        "endColumns": "63,68",
+                        "endOffsets": "215,326"
+                    },
+                    "to": {
+                        "startLines": "635,636",
+                        "startColumns": "4,4",
+                        "startOffsets": "40488,40552",
+                        "endColumns": "63,68",
+                        "endOffsets": "40547,40616"
+                    }
+                },
+                {
+                    "source": "/Users/user/Desktop/Apps/Pandemic-Tracker/Pandemic-Tracker/V_Map/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "42",
+                        "endOffsets": "54"
+                    },
+                    "to": {
+                        "startLines": "671",
+                        "startColumns": "4",
+                        "startOffsets": "43007",
+                        "endColumns": "42",
+                        "endOffsets": "43045"
                     }
                 },
                 {
