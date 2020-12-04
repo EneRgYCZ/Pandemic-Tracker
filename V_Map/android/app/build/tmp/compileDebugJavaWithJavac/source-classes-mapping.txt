@@ -1,0 +1,14 @@
+com/v_map/MainActivity.java
+ com.v_map.MainActivity
+com/v_map/ReactNativeFlipper.java
+ com.v_map.ReactNativeFlipper
+ com.v_map.ReactNativeFlipper$1
+ com.v_map.ReactNativeFlipper$2
+ com.v_map.ReactNativeFlipper$2$1
+com/v_map/MainApplication.java
+ com.v_map.MainApplication
+ com.v_map.MainApplication$1
+com/v_map/BuildConfig.java
+ com.v_map.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

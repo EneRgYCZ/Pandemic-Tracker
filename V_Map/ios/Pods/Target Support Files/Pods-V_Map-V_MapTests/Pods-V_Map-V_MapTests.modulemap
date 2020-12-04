@@ -1,0 +1,6 @@
+module Pods_V_Map_V_MapTests {
+  umbrella header "Pods-V_Map-V_MapTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

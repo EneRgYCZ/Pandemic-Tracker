@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/V_Map.iml" filepath="$PROJECT_DIR$/.idea/modules/V_Map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/V_Map.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/V_Map.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1334780757/V_Map.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-1334780757/V_Map.react-native-vector-icons.iml" />
+    </modules>
+  </component>
+</project>
