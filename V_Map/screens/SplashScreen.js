@@ -36,7 +36,7 @@ const SplashScreen = ({navigation}) => {
         >
             <Text style={[styles.title, {
                 color: colors.text
-            }]}>Ramai in siguranta!</Text>
+            }]}>Ramai in siguranta!!!</Text>
             <Text style={styles.text}>Autentifica-te!</Text>
             <View style={styles.button}>
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
