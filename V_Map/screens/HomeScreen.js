@@ -8,48 +8,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Constants from 'expo-constants';
-import * as Animatable from 'react-native-animatable';
 import Collapsible from 'react-native-collapsible';
+import * as Animatable from 'react-native-animatable';
+import LinearGradient from 'react-native-linear-gradient';
 import Accordion from 'react-native-collapsible/Accordion';
 
 const BACON_IPSUM =
   'Bacon ipsum dolor amet chuck turducken landjaeger tongue spare ribs. Picanha beef prosciutto meatball turkey shoulder shank salami cupim doner jowl pork belly cow. Chicken shankle rump swine tail frankfurter meatloaf ground round flank ham hock tongue shank andouille boudin brisket. ';
 
 const CONTENT = [
-  {
-    title: 'First',
-    content: BACON_IPSUM,
-  },
-  {
-    title: 'Second',
-    content: BACON_IPSUM,
-  },
-  {
-    title: 'Third',
-    content: BACON_IPSUM,
-  },
-  {
-    title: 'Fourth',
-    content: BACON_IPSUM,
-  },
-  {
-    title: 'Fifth',
-    content: BACON_IPSUM,
-  },
 ];
 
 const SELECTORS = [
-  {
-    title: 'First',
-    value: 0,
-  },
-  {
-    title: 'Third',
-    value: 2,
-  },
-  {
-    title: 'None',
-  },
 ];
 
 export default class App extends Component {
@@ -57,6 +27,11 @@ export default class App extends Component {
     activeSections: [],
     collapsed: true,
     multipleSelect: false,
+    durereDeCap : false,
+    nasInfundat : false,
+    durereInGat : false,
+    dureriAbdominale : false,
+    febra : false,
   };
 
   toggleExpanded = () => {
@@ -96,70 +71,85 @@ export default class App extends Component {
   }
 
   render() {
-    const { multipleSelect, activeSections } = this.state;
+    const { 
+      multipleSelect, 
+      activeSections,
+      durereDeCap,
+      nasInfundat,
+      durereInGat,
+      dureriAbdominale,
+      febra, 
+    } = this.state;
 
     return (
       <View style={styles.container}>
         <ScrollView contentContainerStyle={{ paddingTop: 30 }}>
-          <Text style={styles.title}>Accordion Example</Text>
-          <View style={styles.selectors}>
-            <Text style={styles.selectTitle}>Select:</Text>
+          <Text style={styles.title}>Daily report</Text>
+          <TouchableOpacity onPress={this.toggleExpanded}>
+            <View style={styles.header}>
+              <Text style={styles.headerText}>Simptome</Text>
+            </View>
+          </TouchableOpacity>
+          <Collapsible collapsed={this.state.collapsed} align="center">
+            <View style={styles.content}>
+              <View style={styles.multipleToggle}>
+                <Text style={styles.multipleToggle__title}>Aveti dureri de cap?</Text>
+                <Switch
+                  value={durereDeCap}
+                  onValueChange={a => this.setState({ durereDeCap: a })}
+                />
+              </View>
+            </View>
+          </Collapsible>
 
-            {SELECTORS.map(selector => (
-              <TouchableOpacity
-                key={selector.title}
-                onPress={() => this.setSections([selector.value])}
-              >
-                <View style={styles.selector}>
-                  <Text
-                    style={
-                      activeSections.includes(selector.value) &&
-                      styles.activeSelector
-                    }
-                  >
-                    {selector.title}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
-          <TouchableOpacity onPress={this.toggleExpanded}>
-            <View style={styles.header}>
-              <Text style={styles.headerText}>Single Collapsible</Text>
-            </View>
-          </TouchableOpacity>
           <Collapsible collapsed={this.state.collapsed} align="center">
             <View style={styles.content}>
-              <Text>
-                Bacon ipsum dolor amet chuck turducken landjaeger tongue spare
-                ribs
-              </Text>
               <View style={styles.multipleToggle}>
-                <Text style={styles.multipleToggle__title}>Multiple Select?</Text>
+                <Text style={styles.multipleToggle__title}>Aveti nas infundat?</Text>
                 <Switch
-                  value={multipleSelect}
-                  onValueChange={a => this.setState({ multipleSelect: a })}
+                  value={nasInfundat}
+                  onValueChange={a => this.setState({ nasInfundat: a })}
                 />
               </View>
             </View>
           </Collapsible>
-          <TouchableOpacity onPress={this.toggleExpanded}>
-            <View style={styles.header}>
-              <Text style={styles.headerText}>Single Collapsible</Text>
-            </View>
-          </TouchableOpacity>
+
           <Collapsible collapsed={this.state.collapsed} align="center">
             <View style={styles.content}>
-              <Text>
-                Lasere tunete si fulgere
-              </Text>
               <View style={styles.multipleToggle}>
+                <Text style={styles.multipleToggle__title}>Aveti dureti in gat?</Text>
                 <Switch
-                  
+                  value={durereInGat}
+                  onValueChange={a => this.setState({ durereInGat: a })}
                 />
               </View>
             </View>
           </Collapsible>
+
+          <Collapsible collapsed={this.state.collapsed} align="center">
+            <View style={styles.content}>
+              <View style={styles.multipleToggle}>
+                <Text style={styles.multipleToggle__title}>Aveti febrea (Mai mare decat 37.5)?</Text>
+                <Switch
+                  value={febra}
+                  onValueChange={a => this.setState({ febra: a })}
+                />
+              </View>
+            </View>
+          </Collapsible>
+
+          <Collapsible collapsed={this.state.collapsed} align="center">
+            <View style={styles.content}>
+              <View style={styles.multipleToggle}>
+                <Text style={styles.multipleToggle__title}>Aveti dureri abdominale?</Text>
+                <Switch
+                  value={dureriAbdominale}
+                  onValueChange={a => this.setState({ dureriAbdominale: a })}
+                />
+              </View>
+            </View>
+          </Collapsible>
+
           <Accordion
             activeSections={activeSections}
             sections={CONTENT}
@@ -170,6 +160,20 @@ export default class App extends Component {
             duration={400}
             onChange={this.setSections}
           />
+
+          <TouchableOpacity
+            style={styles.signIn}
+          >
+            <LinearGradient
+              colors={['#08d4c4', '#01ab9d']}
+              style={styles.signIn}
+            >
+              <Text style={[styles.textSign, {
+                color: '#fff'
+              }]}>Trimite raport</Text>
+            </LinearGradient>
+            
+          </TouchableOpacity>
         </ScrollView>
       </View>
     );
@@ -198,7 +202,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   content: {
-    padding: 20,
     backgroundColor: '#fff',
   },
   active: {
@@ -234,4 +237,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginRight: 8,
   },
+  signIn: {
+    width: '100%',
+    height: 50,
+    justifyContent: "center",
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  textSign: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  }
 });
