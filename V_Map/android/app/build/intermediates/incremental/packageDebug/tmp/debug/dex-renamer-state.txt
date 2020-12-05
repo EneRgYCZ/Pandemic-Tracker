@@ -1,4 +1,4 @@
-#Sat Dec 05 15:36:27 EET 2020
-base.0=X\:\\reactnative\\tracker\\Pandemic-Tracker\\V_Map\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sat Dec 05 21:54:22 EET 2020
+base.0=/Users/user/Desktop/Apps/Pandemic-Tracker/Pandemic-Tracker/V_Map/android/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
