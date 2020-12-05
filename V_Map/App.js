@@ -21,8 +21,14 @@ import SettingsScreen from './screens/SettingsScreen';
 import BookmarkScreen from './screens/BookmarkScreen';
 
 import { AuthContext } from './components/context';
-
+import firebase from 'firebase';
 import RootStackScreen from './screens/RootStackScreen';
+
+
+
+
+
+
 
 const Drawer = createDrawerNavigator();
 
@@ -57,6 +63,21 @@ const App = () => {
       ...PaperDarkTheme.colors,
       background: '#333333',
       text: '#ffffff'
+    }
+  }
+
+  //DATABASE LIFECYCLE CONSTRUCTOR START
+  class DatabaseClass extends App {
+    componentWillMount() {
+      firebase.initializeApp({
+        apiKey: 'AIzaSyD7iz2peu1wunm7EbP8tR-6CpWcUm2nKiI',
+        authDomain: 'pandemic-tracker-5e3f4.firebaseapp.com',
+        projectId: 'pandemic-tracker-5e3f4',
+        storageBucket: 'pandemic-tracker-5e3f4.appspot.com',
+        messagingSenderId: '61112402138',
+        appId: '1:61112402138:web:369dd515cc18db288765e3',
+        measurementId: 'G-XX82NNR8XK'
+      });
     }
   }
 
