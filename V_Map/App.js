@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import {
   NavigationContainer,
+  DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
-  DarkTheme as NavigationDarkTheme
 } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 

@@ -165,7 +165,7 @@ export default class App extends Component {
             style={styles.signIn}
           >
             <LinearGradient
-              colors={['#08d4c4', '#01ab9d']}
+              colors={['#4b0082', '#430075']}
               style={styles.signIn}
             >
               <Text style={[styles.textSign, {
