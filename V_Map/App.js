@@ -24,12 +24,6 @@ import { AuthContext } from './components/context';
 import firebase from 'firebase';
 import RootStackScreen from './screens/RootStackScreen';
 
-
-
-
-
-
-
 const Drawer = createDrawerNavigator();
 
 const App = () => {

@@ -70,6 +70,23 @@ export default class App extends Component {
     );
   }
 
+  onButtonPress () {
+    const { durereDeCap,
+      nasInfundat,
+      durereInGat,
+      dureriAbdominale,
+      febra
+    } = this.props
+
+    this.props.raportCreate ({
+      durereDeCap,
+      nasInfundat,
+      durereInGat,
+      dureriAbdominale,
+      febra
+    });
+  }
+
   render() {
     const { 
       multipleSelect, 
@@ -163,6 +180,7 @@ export default class App extends Component {
 
           <TouchableOpacity
             style={styles.signIn}
+            onPress = {() => {this.onButtonPress.bind(this)}}
           >
             <LinearGradient
               colors={['#4b0082', '#430075']}
