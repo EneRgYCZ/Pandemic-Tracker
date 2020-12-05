@@ -1,77 +1,58 @@
-import React from 'react';
-import { 
-  View, 
-  Text, 
-  Button, 
-  StyleSheet, 
-  StatusBar, 
-  Alert, 
-  ScrollView, 
-  Switch, 
-  TouchableOpacity } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import React, { Component } from 'react';
+import {
+  Switch,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 import Constants from 'expo-constants';
 import * as Animatable from 'react-native-animatable';
 import Collapsible from 'react-native-collapsible';
 import Accordion from 'react-native-collapsible/Accordion';
 
 const BACON_IPSUM =
-  'Text Text Text';
+  'Bacon ipsum dolor amet chuck turducken landjaeger tongue spare ribs. Picanha beef prosciutto meatball turkey shoulder shank salami cupim doner jowl pork belly cow. Chicken shankle rump swine tail frankfurter meatloaf ground round flank ham hock tongue shank andouille boudin brisket. ';
 
 const CONTENT = [
   {
-    title: 'Durere de cap',
+    title: 'First',
     content: BACON_IPSUM,
   },
   {
-    title: 'Nas infundat',
+    title: 'Second',
     content: BACON_IPSUM,
   },
   {
-    title: 'Durere in gat',
+    title: 'Third',
     content: BACON_IPSUM,
   },
   {
-    title: 'Febra',
+    title: 'Fourth',
     content: BACON_IPSUM,
   },
   {
-    title: 'Durere abdominala',
+    title: 'Fifth',
     content: BACON_IPSUM,
   },
 ];
 
 const SELECTORS = [
   {
-    title: 'Durere de cap',
+    title: 'First',
     value: 0,
   },
   {
-    title: "Nas infundat",
-    value: 1,
-  },
-  {
-    title: 'Durere in gat',
+    title: 'Third',
     value: 2,
   },
-];
-
-const SELECTORS2 = [
   {
-    title: 'Febra',
-    value: 3,
-  },
-  {
-    title: "Durere abdomnala",
-    value: 4,
-  },
-  {
-    title: 'Durere in gat',
-    value: 5,
+    title: 'None',
   },
 ];
 
-export default class HomeScreen extends React.Component {
+export default class App extends Component {
   state = {
     activeSections: [],
     collapsed: true,
@@ -116,12 +97,14 @@ export default class HomeScreen extends React.Component {
 
   render() {
     const { multipleSelect, activeSections } = this.state;
+
     return (
       <View style={styles.container}>
         <ScrollView contentContainerStyle={{ paddingTop: 30 }}>
-          <Text style={styles.title}>Raport Medical</Text>
+          <Text style={styles.title}>Accordion Example</Text>
           <View style={styles.selectors}>
-            <Text style={styles.selectTitle}>Simptome:</Text>
+            <Text style={styles.selectTitle}>Select:</Text>
+
             {SELECTORS.map(selector => (
               <TouchableOpacity
                 key={selector.title}
@@ -140,28 +123,41 @@ export default class HomeScreen extends React.Component {
               </TouchableOpacity>
             ))}
           </View>
-          <View style={styles.selectors}>
-            {SELECTORS2.map(selector => (
-              <TouchableOpacity
-                key={selector.title}
-                onPress={() => this.setSections([selector.value])}
-              >
-                <View style={styles.selector}>
-                  <Text
-                    style={
-                      activeSections.includes(selector.value) &&
-                      styles.activeSelector
-                    }
-                  >
-                    {selector.title}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
+          <TouchableOpacity onPress={this.toggleExpanded}>
+            <View style={styles.header}>
+              <Text style={styles.headerText}>Single Collapsible</Text>
+            </View>
+          </TouchableOpacity>
           <Collapsible collapsed={this.state.collapsed} align="center">
             <View style={styles.content}>
-              
+              <Text>
+                Bacon ipsum dolor amet chuck turducken landjaeger tongue spare
+                ribs
+              </Text>
+              <View style={styles.multipleToggle}>
+                <Text style={styles.multipleToggle__title}>Multiple Select?</Text>
+                <Switch
+                  value={multipleSelect}
+                  onValueChange={a => this.setState({ multipleSelect: a })}
+                />
+              </View>
+            </View>
+          </Collapsible>
+          <TouchableOpacity onPress={this.toggleExpanded}>
+            <View style={styles.header}>
+              <Text style={styles.headerText}>Single Collapsible</Text>
+            </View>
+          </TouchableOpacity>
+          <Collapsible collapsed={this.state.collapsed} align="center">
+            <View style={styles.content}>
+              <Text>
+                Lasere tunete si fulgere
+              </Text>
+              <View style={styles.multipleToggle}>
+                <Switch
+                  
+                />
+              </View>
             </View>
           </Collapsible>
           <Accordion
@@ -171,7 +167,7 @@ export default class HomeScreen extends React.Component {
             expandMultiple={multipleSelect}
             renderHeader={this.renderHeader}
             renderContent={this.renderContent}
-            duration={300}
+            duration={400}
             onChange={this.setSections}
           />
         </ScrollView>
