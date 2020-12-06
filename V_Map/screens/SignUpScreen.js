@@ -75,7 +75,7 @@ const SignInScreen = ({navigation}) => {
       <View style={styles.container}>
           <StatusBar backgroundColor='#009387' barStyle="light-content"/>
         <View style={styles.header}>
-            <Text style={styles.text_header}>Register Now!</Text>
+            <Text style={styles.text_header}>Creaza un cont!</Text>
         </View>
         <Animatable.View 
             animation="fadeInUpBig"
@@ -179,11 +179,11 @@ const SignInScreen = ({navigation}) => {
             </View>
             <View style={styles.textPrivate}>
                 <Text style={styles.color_textPrivate}>
-                    By signing up you agree to our
+                    Prin creerea acestui cont sunteti de acord cu
                 </Text>
-                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Terms of service</Text>
-                <Text style={styles.color_textPrivate}>{" "}and</Text>
-                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{""}Privacy policy</Text>
+                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{""}Termenii si conditiile</Text>
+                <Text style={styles.color_textPrivate}>{" "}si</Text>
+                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Politica de confidentialitate</Text>
             </View>
             <View style={styles.button}>
                 <TouchableOpacity
@@ -196,7 +196,7 @@ const SignInScreen = ({navigation}) => {
                 >
                     <Text style={[styles.textSign, {
                         color:'#fff'
-                    }]}>Sign Up</Text>
+                    }]}>Inregistrare</Text>
                 </LinearGradient>
                 </TouchableOpacity>
 
@@ -210,7 +210,7 @@ const SignInScreen = ({navigation}) => {
                 >
                     <Text style={[styles.textSign, {
                         color: '#4b0082'
-                    }]}>Sign In</Text>
+                    }]}>Autentificare</Text>
                 </TouchableOpacity>
             </View>
             </ScrollView>

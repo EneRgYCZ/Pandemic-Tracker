@@ -6,15 +6,13 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import Constants from 'expo-constants';
 import Collapsible from 'react-native-collapsible';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import Accordion from 'react-native-collapsible/Accordion';
-
-const BACON_IPSUM =
-  'Bacon ipsum dolor amet chuck turducken landjaeger tongue spare ribs. Picanha beef prosciutto meatball turkey shoulder shank salami cupim doner jowl pork belly cow. Chicken shankle rump swine tail frankfurter meatloaf ground round flank ham hock tongue shank andouille boudin brisket. ';
 
 const CONTENT = [
 ];
@@ -32,6 +30,19 @@ export default class App extends Component {
     durereInGat : false,
     dureriAbdominale : false,
     febra : false,
+  };
+
+  onButtonPress() {
+    const { durereDeCap, nasInfundat, durereInGat, dureriAbdominale, febra } = this.props;
+    this.props.patientCreate({ durereDeCap, nasInfundat, durereInGat, dureriAbdominale, febra })
+    {
+      const { currentUser } = firebase.auth();
+
+      firebase.database().ref(`/Doctor/${currentUser.displayName}/raport1`)
+        .push({ durereDeCap, nasInfundat, durereInGat, dureriAbdominale, febra });
+    };
+
+
   };
 
   toggleExpanded = () => {
@@ -101,7 +112,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <ScrollView contentContainerStyle={{ paddingTop: 30 }}>
-          <Text style={styles.title}>Daily report</Text>
+          <Text style={styles.title}>Raportul zilnic</Text>
           <TouchableOpacity onPress={this.toggleExpanded}>
             <View style={styles.header}>
               <Text style={styles.headerText}>Simptome</Text>
@@ -180,7 +191,10 @@ export default class App extends Component {
 
           <TouchableOpacity
             style={styles.signIn}
-            onPress = {() => {this.onButtonPress.bind(this)}}
+            onPress={() => {
+              this.onButtonPress.bind(this)
+              Alert.alert("Raportul a fost trimis cu succes!");
+            }}
           >
             <LinearGradient
               colors={['#4b0082', '#430075']}
